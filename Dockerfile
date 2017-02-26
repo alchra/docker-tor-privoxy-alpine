@@ -1,10 +1,8 @@
-FROM alpine:edge
+FROM alpine:latest
 
-EXPOSE 8118 9050
+RUN apk --no-cache add privoxy tor runit
 
-RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' \
-    >> /etc/apk/repositories && \
-    apk --update add privoxy tor@testing runit@testing
+EXPOSE 8118
 
 COPY service /etc/service/
 
