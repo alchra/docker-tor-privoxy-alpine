@@ -12,4 +12,5 @@ RUN chown -R dockeruser /etc/service && chgrp -R dockerusers /etc/service
 
 USER dockeruser
 
+ENTRYPOINT ["/entrypoint"]
 CMD ["runsvdir", "/etc/service"]
